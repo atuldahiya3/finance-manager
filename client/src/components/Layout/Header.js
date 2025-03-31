@@ -8,13 +8,13 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="max-w-9xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <h1 className="text-xl font-semibold text-gray-900">Finance Manager</h1>
         
         <div className="flex items-center space-x-4">
-          <button className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+          {/* <button className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
             <BellIcon className="h-6 w-6" />
-          </button>
+          </button> */}
           
           <Menu as="div" className="relative">
             <Menu.Button className="flex items-center space-x-2 focus:outline-none">
@@ -33,7 +33,7 @@ const Header = () => {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-                <Menu.Item>
+                {/* <Menu.Item>
                   {({ active }) => (
                     <button
                       className={`${active ? 'bg-gray-100' : ''} w-full px-4 py-2 text-sm text-gray-700 flex items-center`}
@@ -52,7 +52,7 @@ const Header = () => {
                       Settings
                     </button>
                   )}
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item>
                   {({ active }) => (
                     <button

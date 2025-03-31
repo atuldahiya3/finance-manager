@@ -143,7 +143,33 @@ exports.updateCategory = async (req, res) => {
     res.status(500).send('Server Error');
   }
 };
-
+exports.getLast7DaysSummary = async (req, res) => {
+  try {
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    
+    const expenses = await Expense.aggregate([
+      {
+        $match: {
+          user: req.user.id,
+          date: { $gte: sevenDaysAgo }
+        }
+      },
+      {
+        $group: {
+          _id: { $dateToString: { format: "%Y-%m-%d", date: "$date" } },
+          amount: { $sum: "$amount" }
+        }
+      },
+      { $sort: { _id: 1 } }
+    ]);
+    
+    res.json(expenses);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 // Delete expense category
 exports.deleteCategory = async (req, res) => {
   try {

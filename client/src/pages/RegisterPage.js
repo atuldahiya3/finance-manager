@@ -128,7 +128,7 @@ const RegisterPage = () => {
               </div>
             </div>
 
-            <div>
+            <div className='bg-gray-800 rounded-xl'>
               <Button type="submit" className="w-full flex justify-center">
                 Register
               </Button>
