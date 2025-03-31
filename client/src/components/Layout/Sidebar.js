@@ -17,7 +17,7 @@ const Sidebar = () => {
     { name: 'Income', path: '/income', icon: ArrowUpIcon },
     { name: 'Expense', path: '/expense', icon: ArrowDownIcon },
     { name: 'Invoices', path: '/invoice', icon: DocumentTextIcon },
-    { name: 'Settings', path: '/settings', icon: CogIcon }
+   
   ];
 
   return (

@@ -10,9 +10,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import PrivateRoute from './components/common/PrivateRoute';
 import CreateInvoice from './components/Invoice/CreateInvoiceModal';
-import IncomeList from './components/Income/IncomeList';
 import AddStockModal from './components/Stock/AddStockModal';
-import AddIncome from './components/Income/AddIncomeModal'
 
 function App() {
   return (
@@ -20,7 +18,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       
-      <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<DashboardPage />} />
         <Route path="stock" element={<StockPage />} />
         <Route path="stock/add" element={<AddStockModal />} />

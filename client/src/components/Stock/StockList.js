@@ -40,7 +40,7 @@ const StockList = ({ items, loading, onRefresh, onEdit, onDelete }) => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-              <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              {/* <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th> */}
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -62,7 +62,7 @@ const StockList = ({ items, loading, onRefresh, onEdit, onDelete }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.totalAmount)}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                {/* <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <button
                     onClick={() => {
                       setSelectedItem(item);
@@ -84,7 +84,7 @@ const StockList = ({ items, loading, onRefresh, onEdit, onDelete }) => {
                   >
                     <TrashIcon className="h-5 w-5" />
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>

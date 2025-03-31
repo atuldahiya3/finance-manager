@@ -40,7 +40,7 @@ const DashboardPage = () => {
           income: incomeTotal,
           expenses: expenseTotal,
           profit: incomeTotal - expenseTotal,
-          invoices: invoiceRes.data.invoiceCount || 0,
+          invoices: invoiceRes.data.totalInvoiced || 0,
           paidInvoices: invoiceRes.data.paidCount || 0,
           overdueInvoices: invoiceRes.data.overdueCount || 0
         });
@@ -98,7 +98,6 @@ const DashboardPage = () => {
         <SummaryCard 
           title="Total Income" 
           value={summary.income} 
-          change="+12.5%" 
           icon="trending-up" 
           color="success" 
           onClick={() => navigate('/income')}
@@ -106,7 +105,6 @@ const DashboardPage = () => {
         <SummaryCard 
           title="Total Expenses" 
           value={summary.expenses} 
-          change="-3.2%" 
           icon="trending-down" 
           color="danger" 
           onClick={() => navigate('/expense')}
@@ -114,14 +112,14 @@ const DashboardPage = () => {
         <SummaryCard 
           title="Net Profit" 
           value={summary.profit} 
-          change={summary.profit >= 0 ? "+8.7%" : "-5.2%"} 
+          // change={summary.profit >= 0 ? "+8.7%" : "-5.2%"} 
           icon="dollar" 
           color={summary.profit >= 0 ? "primary" : "danger"} 
         />
         <SummaryCard 
           title="Active Invoices" 
           value={summary.invoices} 
-          change="+5" 
+          // change="+5" 
           icon="document" 
           color="info" 
           onClick={() => navigate('/invoice')}
@@ -129,12 +127,12 @@ const DashboardPage = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+        {/* <div className="lg:col-span-2">
           <div className="bg-white rounded-xl shadow-sm p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Financial Activity</h2>
             <ActivityChart />
           </div>
-        </div>
+        </div> */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Income vs Expenses</h2>
           <div className="h-64">
@@ -179,13 +177,13 @@ const DashboardPage = () => {
               <span>Invoice</span>
             </button>
             <button 
-              onClick={() => navigate('/stock/add')}
+              onClick={() => navigate('/stock')}
               className="bg-info-50 hover:bg-info-100 text-info-600 p-4 rounded-lg flex flex-col items-center transition-colors duration-200"
             >
               <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
               </svg>
-              <span>Add Stock</span>
+              <span>Stock</span>
             </button>
           </div>
         </div>

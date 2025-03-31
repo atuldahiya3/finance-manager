@@ -107,16 +107,11 @@ const LoginPage = () => {
               </div>
 
               <div className="text-sm">
-                <button
-                  type="button"
-                  className="font-medium text-primary-600 hover:text-primary-500"
-                >
-                  Forgot your password?
-                </button>
+                
               </div>
             </div>
 
-            <div>
+            <div className='bg-gray-800 rounded-xl'>
               <Button type="submit" className="w-full flex justify-center">
                 Sign in
               </Button>

@@ -49,11 +49,11 @@ const RecentTransactions = ({ transactions }) => {
           </div>
         )}
       </div>
-      <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
+      {/* <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
         <button className="text-sm font-medium text-primary-600 hover:text-primary-500">
           View all transactions
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

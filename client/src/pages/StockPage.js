@@ -47,8 +47,8 @@ const StockPage = () => {
 
   const handleAddStock = async (newStock) => {
     try {
-      const res = await axios.post('/api/stock', newStock);
-      setStockItems([res.data, ...stockItems]);
+      // const res = await axios.post('/api/stock', newStock);
+      // setStockItems([res.data, ...stockItems]);
       toast.success('Stock item added successfully');
       setIsModalOpen(false);
       fetchStock(); // Refresh data
@@ -73,7 +73,7 @@ const StockPage = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-10">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold text-gray-900">Inventory Management</h1>
         <div className="flex space-x-3">
@@ -81,10 +81,13 @@ const StockPage = () => {
             <RefreshIcon className="h-5 w-5 mr-2" />
             Refresh
           </Button>
-          <Button onClick={() => setIsModalOpen(true)}>
-            <PlusIcon className="h-5 w-5 mr-2" />
-            Add Stock
-          </Button>
+          <div className='bg-gray-800 rounded-lg'>
+            <Button onClick={() => setIsModalOpen(true)}>
+              <PlusIcon className="h-5 w-5 mr-2" />
+              Add Stock
+            </Button>
+
+          </div>
         </div>
       </div>
 
@@ -99,14 +102,14 @@ const StockPage = () => {
             {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(stats.totalValue)}
           </p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        {/* <div className="bg-white rounded-xl shadow-sm p-6">
           <h3 className="text-sm font-medium text-gray-500">Low Stock Items</h3>
           <p className={`mt-1 text-3xl font-semibold ${
             stats.lowStock > 0 ? 'text-danger-600' : 'text-gray-900'
           }`}>
             {stats.lowStock}
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className="bg-white rounded-xl shadow-sm overflow-hidden">

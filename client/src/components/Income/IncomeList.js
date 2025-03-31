@@ -55,7 +55,7 @@ const IncomeList = ({ incomes, categories, loading, onRefresh }) => {
                   {new Date(income.date).toLocaleDateString()}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {category?.name || 'Uncategorized'}
+                  {income.category?.name || 'Uncategorized'}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(income.amount)}

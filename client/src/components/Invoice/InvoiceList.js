@@ -8,6 +8,7 @@ const InvoiceModal = ({ invoice, onClose }) => {
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl max-h-screen overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
+          <img className='h-24 w-24' alt='company logo' src='client/src/components/Invoice/InvoiceList.js'/>
           <h2 className="text-2xl font-bold">Invoice #{invoice.invoiceNumber}</h2>
           <button 
             onClick={onClose}
@@ -20,12 +21,12 @@ const InvoiceModal = ({ invoice, onClose }) => {
         </div>
         
         <div className="grid grid-cols-2 gap-6 mb-6">
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-2">From</h3>
             <p>Your Company Name</p>
             <p>Your Address</p>
             <p>Your Email</p>
-          </div>
+          </div> */}
           <div>
             <h3 className="text-lg font-semibold mb-2">To</h3>
             <p>{invoice.customerName}</p>
@@ -241,13 +242,13 @@ const InvoiceList = ({ invoices: initialInvoices, loading, onRefresh }) => {
     <div className="p-4">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Invoices</h2>
-        <button 
+        {/* <button 
           onClick={onRefresh}
           className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
           disabled={isLoading}
         >
           {isLoading ? 'Loading...' : 'Refresh'}
-        </button>
+        </button> */}
       </div>
       
       {isLoading && !selectedInvoice && !error ? (
@@ -264,7 +265,7 @@ const InvoiceList = ({ invoices: initialInvoices, loading, onRefresh }) => {
                 <th className="border p-2">Issue Date</th>
                 <th className="border p-2">Due Date</th>
                 <th className="border p-2">Total</th>
-                <th className="border p-2">Status</th>
+                {/* <th className="border p-2">Status</th> */}
                 <th className="border p-2">Actions</th>
               </tr>
             </thead>
@@ -276,14 +277,14 @@ const InvoiceList = ({ invoices: initialInvoices, loading, onRefresh }) => {
                   <td className="border p-2">{new Date(invoice.issueDate).toLocaleDateString()}</td>
                   <td className="border p-2">{new Date(invoice.dueDate).toLocaleDateString()}</td>
                   <td className="border p-2">${invoice.total.toFixed(2)}</td>
-                  <td className="border p-2 font-semibold">
+                  {/* <td className="border p-2 font-semibold">
                     <span className={
                       invoice.status === 'paid' ? 'text-green-500' : 
                       invoice.status === 'overdue' ? 'text-red-500' : 
                       'text-yellow-500'}>
                       {invoice.status}
                     </span>
-                  </td>
+                  </td> */}
                   <td className="border p-2">
                     <button 
                       onClick={() => handleViewInvoice(invoice._id)}
