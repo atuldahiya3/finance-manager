@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 // @desc    Get all expense entries
 // @access  Private
 router.get('/', auth, expenseController.getAllExpenses);
-
+router.get('/summary/last7days', auth, expenseController.getLast7DaysSummary);
 // @route   POST api/expense
 // @desc    Add an expense entry
 // @access  Private

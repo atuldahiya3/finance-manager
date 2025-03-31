@@ -1,6 +1,6 @@
 // client/src/context/AuthContext.js
 import { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
