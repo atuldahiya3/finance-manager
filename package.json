@@ -1,0 +1,17 @@
+{
+  "name": "finance-manager",
+  "version": "1.0.0",
+  "description": "Finance Manager with Stock Records and Invoice Generation",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client"
+  },
+  "author": "",
+  "license": "MIT"
+}
